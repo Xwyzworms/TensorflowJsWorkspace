@@ -1,14 +1,16 @@
-const { train } = require("@tensorflow/tfjs")
 const fs = require("fs")
-const _ = require("lodash")
+const _ = require("lodash") // Array manipulation
 const shuffleSeed =  require("shuffle-seed")
 
 //TODO
+//      Only using numeric, therefore convert all numeric columns to float
 // 1. Define the Requirements
-//  1.1 Extract columns
+//  1.1 Extract columns data
 //  1.2 Create temporary array for 
 //     1.2.1 Training
 //     1.2.1 Testing 
+//  1.3 Do Shuffling
+//  1.4 Return based on testing value
 
 function extractDataBasedOnColumns(data, columNames) 
 {
@@ -57,7 +59,7 @@ function load_csv(filename,
 
     let labels = extractDataBasedOnColumns(dataset, labelColumns)
     dataset = extractDataBasedOnColumns(dataset, dataColumns)
-    dataset.shift()// Remove the index
+    dataset.shift()// Remove the first index ( the column name )
     labels.shift() 
 
     if (shuffle) {
@@ -90,3 +92,5 @@ mainDict = {
     labelColumns : ["price"]
 }
 console.log(load_csv("kc_house_data.csv", mainDict))
+
+module.exports = {load_csv}

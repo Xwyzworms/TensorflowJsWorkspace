@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "Tensor.js",
-  "type" : "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node SimpleLinearFuckingRegression.js"
+    "start": "node SimpleLinearFuckingRegression.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow/tfjs": "^4.6.0"
+    "@tensorflow/tfjs": "^4.6.0",
+    "lodash": "^4.17.21",
+    "shuffle-seed": "^1.1.6"
   }
 }
